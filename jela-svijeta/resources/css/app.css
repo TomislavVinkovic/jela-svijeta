@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.labelMargin{
+    margin-left: 10px;
+}
+
+.padded {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.padded-btns{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.padded-pageselect{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+}
+
+.centeredContent {
+    text-align: center;
+}
+
+
+.categoryText {
+    background-color: #036bfc;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.tagText {
+    background-color: #129c00;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.ingredientText{
+    background-color: #ced932;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.descriptor {
+    display: inline;
+    font-weight: 100;
+    color: #3b3b3b;
+}
+
+.container-fluid {
+    width: 100%;
+}
+.block{
+    margin-left: 20px;
+}
+
+.collapseIcon{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.collapseIcon:hover {
+    cursor: pointer;
+}
+
+.contentRight{
+    text-align: right;
+}
+
+.description {
+    margin-top: 40px;
+    padding-bottom: 16px;
+    color: #3b3b3b;
+    font-size: 20px;
+}
+
+.jeloTitle {
+    font-size: 36px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .jeloTitle {
+        font-size: 22px;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .collapseIcon{
+        font-size: 1rem;
+    }
+    .categoryText {
+        border-radius: 5px;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+    
+    .tagText {
+        border-radius: 5px;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+    
+    .ingredientText{
+        border-radius: 5px;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    .filterBtn{
+        margin-top: 20px;
+    }
+    .chk{
+        margin-top: 15px;
+    }
+}
