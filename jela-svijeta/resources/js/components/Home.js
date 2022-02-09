@@ -37,7 +37,7 @@ const Home = () => {
         {value: 20, label: 'Results per page: 20'}
     ];
 
-    const [jelaUrl, setJelaUrl] = useState(`/getjela?lang=${lang}&page=${currentPage}&perpage=${resultsPerPage}`);
+    const [jelaUrl, setJelaUrl] = useState(`/api/meals?lang=${lang}&page=${currentPage}&perpage=${resultsPerPage}`);
     const [paramsUrl, setParamsUrl] = useState(`/getparams?lang=${lang}`);
 
     const { data:jela,  isJelaPending, error:jelaError } = useFetch(jelaUrl);
@@ -54,7 +54,7 @@ const Home = () => {
 
     /* Funkcija za filtraciju rezultata */
     function filterResults() {
-        const urlWithParams = new URL('http://localhost:8000/getjelafiltered');
+        const urlWithParams = new URL('http://localhost:8000/meals/');
 
         urlWithParams.searchParams.append("lang", lang);
         if(filterCategory != null){
@@ -98,7 +98,7 @@ const Home = () => {
 
     /* Funkcija koju Navigation komponenta koristi za promjenu stranice pri promjeni jezika */
     const redirectFunction = (l) => {
-        setJelaUrl(`http://localhost:8000/getjelafiltered?lang=${l}`);
+        setJelaUrl(`http://localhost:8000/meals?lang=${l}`);
         setLang(l);
     }
 
@@ -247,6 +247,7 @@ const Home = () => {
                                 : <button type='button' onClick={() => setCurrentPage(currentPage - 1)} className="btn btn-primary"> <i className="bi bi-chevron-left"></i> {lang === 'en' ? 'Previous' : 'Prethodna'}  </button>
                             }
                         </div>
+                        
                         <div className="col-md-9 col-sm-6" style={{ textAlign: "right" }}>
                             {jela['jela'].length < resultsPerPage ? 
                                 <button type='button' disabled className="btn btn-primary"> {lang === 'en' ? 'Next' : 'Sljedeća'} <i className="bi bi-chevron-right"></i> </button>

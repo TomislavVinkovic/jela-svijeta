@@ -15,54 +15,54 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+        $data = [
+                'slug' => 'sweets',
+                'en' => ['title' => 'Sweets'],
+                'hr' => ['title' => 'Slastice'],
 
-        Category::create(['slug' => 'sweets'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Sweets',
-                'hr' => 'Slastice'
-            ]
-        );
+        ];
+        Category::create($data);
         
-        Category::create(['slug' => 'soups'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Soups',
-                'hr' => 'Juhe'
-            ]
-        );
+        $data = [
+                'slug' => 'soups',
+                'en' => ['title' => 'Soups'],
+                'hr' => ['title' => 'Juhe'],
 
-        Category::create(['slug' => 'fish'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Fish specialties',
-                'hr' => 'Riblji specijaliteti'
-            ]
-        );
+        ];
+        Category::create($data);
 
-        Category::create(['slug' => 'pastas'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Pastas',
-                'hr' => 'Tjestenine'
-            ]
-        );
+        $data = [
+                'slug' => 'fish',
+                'en' => ['title' => 'Fish'],
+                'hr' => ['title' => 'Riba'],
 
-        Category::create(['slug' => 'meatveggies'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Meals with meat and vegetables',
-                'hr' => 'Jela s mesom i povrćem'
-            ]
-        );
+        ];
+        Category::create($data);
 
-        Category::create(['slug' => 'grill'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Grill',
-                'hr' => 'Roštilj'
-            ]
-        );
+        $data = [
+                'slug' => 'pastas',
+                'en' => ['title' => 'Pastas'],
+                'hr' => ['title' => 'Tjestenine'],
+
+        ];
+        Category::create($data);
+
+        $data = [
+                'slug' => 'meatandveggies',
+                'en' => ['title' => 'Meals with meat and vegetables'],
+                'hr' => ['title' => 'Jela s mesom i povrćem'],
+
+        ];
+        Category::create($data);
+
+        $data = [
+                'slug' => 'grill',
+                'en' => ['title' => 'Grill'],
+                'hr' => ['title' => 'Roštilj'],
+
+        ];
+
+        Category::create($data);
 
     }
 }

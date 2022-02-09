@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Astrotomic\Translatable\Translatable;
 
-class Jelo extends Model
+class Meal extends Model
 {
 
     use SoftDeletes;
     use HasFactory;
     use Translatable;
 
-    public $table = 'jela';
+    public $table = 'meals';
     public $timestamps = true;
     public $translatedAttributes = ['title', 'description'];
-
+    
     public function category() {
         return $this->belongsTo(
             Category::class, 
@@ -27,8 +27,8 @@ class Jelo extends Model
     public function tags() {
         return $this->belongsToMany(
             Tag::class,
-            'jelo_has_tag',
-            'jelo_id',
+            'meal_has_tag',
+            'meal_id',
             'tag_id'
         );
     }
@@ -36,8 +36,8 @@ class Jelo extends Model
     public function ingredients() {
         return $this->belongsToMany(
             Ingredient::class,
-            'jelo_has_ingredient',
-            'jelo_id',
+            'meal_has_ingredient',
+            'meal_id',
             'ingredient_id',
         );
     }

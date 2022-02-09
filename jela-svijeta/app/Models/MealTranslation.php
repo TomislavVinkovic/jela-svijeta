@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JeloTranslation extends Model
+class MealTranslation extends Model
 {
     use HasFactory;
+
+    protected $table = 'meal_translations';
+    public $timestamps = false;
 
     protected $fillable = ['title', 'description'];
 }

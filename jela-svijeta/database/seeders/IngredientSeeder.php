@@ -15,76 +15,67 @@ class IngredientSeeder extends Seeder
      */
     public function run()
     {
-        Ingredient::create(['slug' => 'carrot'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Carrot',
-                'hr' => 'Mrkva'
-            ]
-        );
+        $data = [
+            'slug' => 'carrot',
+            'en' => ['title' => 'Carrot'],
+            'hr' => ['title' => 'Mrkva'],
+        ];
+        Ingredient::create($data);
 
-        Ingredient::create(['slug' => 'cream'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Cream',
-                'hr' => 'Šlag'
-            ]
-        );
+        $data = [
+            'slug' => 'cream',
+            'en' => ['title' => 'Cream'],
+            'hr' => ['title' => 'Šlag'],
+        ];
+        Ingredient::create($data);
 
-        Ingredient::create(['slug' => 'strawberry'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Strawberry',
-                'hr' => 'Jagoda'
-            ]
-        );
+        $data = [
+            'slug' => 'strawberry',
+            'en' => ['title' => 'Strawberry'],
+            'hr' => ['title' => 'Jagoda'],
+        ];
+        Ingredient::create($data);
 
-        Ingredient::create(['slug' => 'sugar'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Sugar',
-                'hr' => 'Šećer'
-            ]
-        );
+        $data = [
+            'slug' => 'sugar',
+            'en' => ['title' => 'Sugar'],
+            'hr' => ['title' => 'Šećer'],
+        ];
+        Ingredient::create($data);
 
-        Ingredient::create(['slug' => 'beef'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Beef',
-                'hr' => 'Govedina'
-            ]
-        );
+        $data = [
+            'slug' => 'beef',
+            'en' => ['title' => 'Beef'],
+            'hr' => ['title' => 'Govedina'],
+        ];
+        Ingredient::create($data);
 
-        Ingredient::create(['slug' => 'tomato'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Tomato',
-                'hr' => 'Rajčica'
-            ]
-        );
+        $data = [
+            'slug' => 'tomato',
+            'en' => ['title' => 'Tomato'],
+            'hr' => ['title' => 'Rajčica'],
+        ];
+        Ingredient::create($data);
 
-        Ingredient::create(['slug' => 'salad'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Salad',
-                'hr' => 'Zelena salata'
-            ]
-        );
+        $data = [
+            'slug' => 'salad',
+            'en' => ['title' => 'Salad'],
+            'hr' => ['title' => 'Zelena salata'],
+        ];
+        Ingredient::create($data);
 
-        Ingredient::create(['slug' => 'catfish'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Som',
-                'hr' => 'Catfish'
-            ]
-        );
+        $data = [
+            'slug' => 'catfish',
+            'en' => ['title' => 'Catfish'],
+            'hr' => ['title' => 'Som'],
+        ];
+        Ingredient::create($data);
 
-        Ingredient::create(['slug' => 'pasta'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Pasta',
-                'hr' => 'Tjestenina'
-            ]
-        );
+        $data = [
+            'slug' => 'pasta',
+            'en' => ['title' => 'Pasta'],
+            'hr' => ['title' => 'Tjestenina'],
+        ];
+        Ingredient::create($data);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIngredientTranslationsTable extends Migration
+class IngredientMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -13,6 +13,12 @@ class CreateIngredientTranslationsTable extends Migration
      */
     public function up()
     {
+        Schema::create('ingredients', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('slug')->unique();
+            $table->timestamps();
+        });
+
         Schema::create('ingredient_translations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('locale')->index();
@@ -37,5 +43,6 @@ class CreateIngredientTranslationsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('ingredient_translations');
+        Schema::dropIfExists('ingredients');
     }
 }

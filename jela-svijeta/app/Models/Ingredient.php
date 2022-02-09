@@ -13,12 +13,14 @@ class Ingredient extends Model
 
     public $translatedAttributes = ['title'];
 
+    protected $table = 'ingredients';
+
     public function jela() {
         return $this->belongsToMany(
-            Jelo::class,
-            'jelo_has_ingredient',
+            Meal::class,
+            'meal_has_ingredient',
             'ingredient_id',
-            'jelo_id'
+            'meal_id'
         );
     }
 }

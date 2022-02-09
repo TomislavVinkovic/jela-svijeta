@@ -14,11 +14,11 @@ class Tag extends Model
     public $table = 'tags';
     public $timestamps = true;
     public $translatedAttributes = ['title'];
-
+    
     public function jela() {
         return $this->belongsToMany(
             Jelo::class,
-            'jelo_has_tag',
+            'meal_has_tag',
             'tag_id',
             'jelo_id',
         );

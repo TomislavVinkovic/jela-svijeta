@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class IngredientTranslation extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
+    protected $table = 'ingredient_translations';
 
     protected $fillable = ['title'];
 }

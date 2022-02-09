@@ -13,13 +13,13 @@ const useFetch = (url) => {
         axios.get(url, {signal})
             .then((response) => {
                 setIsPending(false);
-                setData(response.data[0]);
-                setError(response.data[0]['error']);
-                console.log(response.data[0]['error']);
-                console.log(response.data[0]['jela']);
+                setData(response.data);
+                console.log(response.data);
+                setError(response.data['error']);
+                console.log(response.data['error']);
+                console.log(response.data['jela']);
 
             }).catch((err) =>{
-                console.log(err.message);
             });
         
         return abortController.abort();

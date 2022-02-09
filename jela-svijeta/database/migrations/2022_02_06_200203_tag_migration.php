@@ -1,10 +1,10 @@
-<?php
+1<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Tag extends Migration
+class TagMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -18,6 +18,21 @@ class Tag extends Migration
             $table->string('slug')->unique();
             $table->timestamps();
         });
+
+        Schema::create('tag_translations', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('locale')->index();
+
+            $table->unsignedInteger('tag_id');
+            $table->unique(['locale', 'tag_id']);
+
+            $table->foreign('tag_id')
+                ->references('id')
+                ->on('tags')
+                ->onDelete('cascade');
+            
+            $table->string('title');
+        });
     }
 
     /**
@@ -27,6 +42,7 @@ class Tag extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('tag_translations');
         Schema::dropIfExists('tags');
     }
 }

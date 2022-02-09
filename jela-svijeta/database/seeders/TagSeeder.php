@@ -15,44 +15,42 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        Tag::create(['slug' => 'fresh'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Fresh',
-                'hr' => 'Svježe'
-            ]
-        );
+        $data = [
+            'slug' => 'fresh',
+            'en' => ['title' => 'Fresh'],
+            'hr' => ['title' => 'Svježe']
+        ];
+        Tag::create($data);
 
-        Tag::create(['slug' => 'crusty'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Crusty',
-                'hr' => 'Hrskavo'
-            ]
-        );
+        $data = [
+            'slug' => 'crusty',
+            'en' => ['title' => 'Crusty'],
+            'hr' => ['title' => 'Hrskavo']
+        ];
+        Tag::create($data);
 
-        Tag::create(['slug' => 'yummy'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Yummy',
-                'hr' => 'Slasno'
-            ]
-        );
+        $data = [
+            'slug' => 'yummy',
+            'en' => ['title' => 'Yummy'],
+            'hr' => ['title' => 'Slasno']
+        ];
 
-        Tag::create(['slug' => 'family'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Family',
-                'hr' => 'Obitelj'
-            ]
-        );
+        Tag::create($data);
 
-        Tag::create(['slug' => 'raw'])::saveTranslations(
-            'title',
-            [
-                'en' => 'Raw',
-                'hr' => 'Prijesno'
-            ]
-        );
+        $data = [
+            'slug' => 'family',
+            'en' => ['title' => 'Family'],
+            'hr' => ['title' => 'Obitelj']
+        ];
+
+        Tag::create($data);
+
+        $data = [
+            'slug' => 'raw',
+            'en' => ['title' => 'Raw'],
+            'hr' => ['title' => 'Prijesno']
+        ];
+
+        Tag::create($data);
     }
 }
